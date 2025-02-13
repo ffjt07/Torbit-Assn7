@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- Name: Jeremiah Torbit
+     Assignment: CS336 Assignment #5a
+     Created 02/02/25
+     Description: Poll -->
+<html lang="en">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+   <meta name="keywords" content="Pokemon, Pokemon Conference, Pokemon Types, Pokemon Legendary">
+   <meta name="description" content="Conference to learn about the world of pokemon through the different types and ">
+   <meta name="author" content="Jeremiah Torbit">
+   <meta name="robots" content="nofollow">
+   <link rel="stylesheet" href="./assets/css/webdefault.css">
+   <meta charset="UTF-8">
+   <title>Poll</title>
+</head>
+<body>
+   <header class="header" id="main-header">
+      <nav id="navigation">
+         <a href="index.html">Home</a>
+         <a href="awards.html">Member Choice Awards</a>
+         <a href="activities.html">Local Activities</a>
+         <a href="meals.html">Meals</a>
+         <a href="keynote.html">Keynote Speakers</a>
+         <a href="workshopschedule.html">Workshop Schedule</a>
+         <a href="registration.html">Registration Form</a>
+      </nav>
+   </header>
+   <main>
+      <section id="vote-titles">
+         <h1>Cast Your Vote!</h1>
+         <h2>Who is your favorite original starter pokémon?</h2>
+      </section>
+      <section id="poll">
+         <form id="starter-poll" method="post">
+            <label class="poll-label" for="bulbasaur"><input type="radio" name="poll" id="bulbasaur" value="Bulbasaur" required><img class="starter-img" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/de306b0e-e296-4d99-a1df-8a50cb8aea8a/daqm716-4050e341-2cb9-43af-9d15-7b9b755c44d3.png/v1/fill/w_1600,h_1597/bulbasaur_by_monstermmorpg_daqm716-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTU5NyIsInBhdGgiOiJcL2ZcL2RlMzA2YjBlLWUyOTYtNGQ5OS1hMWRmLThhNTBjYjhhZWE4YVwvZGFxbTcxNi00MDUwZTM0MS0yY2I5LTQzYWYtOWQxNS03YjliNzU1YzQ0ZDMucG5nIiwid2lkdGgiOiI8PTE2MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.PIhlrgVmaV-Thuz2S5KKPWrZGTwrD2vnitLAaxXPtHE" alt="Bulbasaur">  Bulbasaur</label>
+            <div class="poll-counter">
+               <p>Bulbasaur Count: <span id="bulb-count"></span></p>
+            </div>
+            <label class="poll-label" for="charmander"><input type="radio" name="poll" id="charmander" value="Charmander"><img class="starter-img" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/de306b0e-e296-4d99-a1df-8a50cb8aea8a/daqokin-5fbd1170-ca4d-4a13-9987-af1effd32161.png/v1/fill/w_1600,h_1842/charmander_by_monstermmorpg_daqokin-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTg0MiIsInBhdGgiOiJcL2ZcL2RlMzA2YjBlLWUyOTYtNGQ5OS1hMWRmLThhNTBjYjhhZWE4YVwvZGFxb2tpbi01ZmJkMTE3MC1jYTRkLTRhMTMtOTk4Ny1hZjFlZmZkMzIxNjEucG5nIiwid2lkdGgiOiI8PTE2MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.xHz6OXHp-2S0AHqpUsviji12eW7kWp8IoLatVOiQYYY" alt="Charmander">  Charmander</label>
+            <div class="poll-counter">
+               <p> Charmander Count: <span  id="char-count"></span></p>
+            </div>
+            <label class="poll-label" for="squirtle"><input type="radio" name="poll" id="squirtle" value="Squirtle"><img class="starter-img" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/de306b0e-e296-4d99-a1df-8a50cb8aea8a/darib6d-2ddf0278-f4df-495a-b902-efd738366b73.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RlMzA2YjBlLWUyOTYtNGQ5OS1hMWRmLThhNTBjYjhhZWE4YVwvZGFyaWI2ZC0yZGRmMDI3OC1mNGRmLTQ5NWEtYjkwMi1lZmQ3MzgzNjZiNzMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.jFji9gAoAEDV0qXRXyNabQCvKFn_wmViHMHYVvpTzl8" alt="Squirtle">   Squirtle</label>
+            <div class="poll-counter">
+               <p>Squirtle Count: <span id="squirt-count"></span></p>
+            </div>
+            <div>
+               <input class="buttons" type="submit" value="Vote!" onclick="thankYouAlert()">
+            </div>
+         </form>
+      </section>
+   </main>
+   <footer>
+      <address>
+         <small>
+            Phone: 303-555-5555<br>Email: pokecon@gmail.com<br>150 Pokemon Way Pallet<br>Town, CO 80401
+         </small>
+      </address>
+      <p id="regis">
+         <small>
+            While this website was created to satisfy the requirement of
+            building a website for an academic course at Regis University, the
+            views and opinions expressed on this website are solely those of
+            the original author and do not necessarily represent the views and
+            opinions of Regis University.
+         </small>
+      </p>
+   </footer>
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+   <script src="./assets/js/logic.js"></script>
+</body>
+</html>

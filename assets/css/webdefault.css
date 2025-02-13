@@ -1,0 +1,459 @@
+/* Elements */
+footer {
+  font-size: 11px;
+  padding-top: 15px;
+  width: 100%;
+}
+
+footer address {
+  text-align: center;
+}
+
+nav {
+  padding-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bolder;
+}
+
+nav a {
+  color: grey;
+  text-decoration: none;
+  padding: 5px;
+}
+
+main h1 {
+  text-align: center;
+}
+
+section {
+  width: 100%;
+}
+
+table {
+  margin: 0 auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+thead {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+td {
+  font-size: large;
+  padding: 10px;
+}
+
+iframe {
+  padding-bottom: 15px;
+}
+
+blockquote {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 450px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border: #3f4249 solid;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 0 #3f4249, 0 6px 20px 0 #3f4249;
+}
+
+fieldset {
+  margin: 10px;
+  width: 425px;
+}
+
+form p {
+  font-weight: 700;
+}
+
+form div {
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+select,
+input {
+  margin-bottom: 8px;
+}
+
+input {
+  width: 200px;
+}
+
+select {
+  width: auto;
+}
+
+/* Classes */
+.starter-img {
+  height: 100px;
+  width: 100px;
+}
+
+.act-item a {
+  text-decoration: none;
+  color: gray;
+  text-shadow: 1px 1px 1px #3f4249;
+}
+
+.flex-sect {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.menu,
+.keynote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.menu img {
+  height: 100px;
+  width: 100px;
+}
+
+.day,
+.key-name {
+  padding-top: 0;
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.meal {
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.meal p {
+  margin: 0;
+  padding: 0;
+}
+
+.keynote img {
+  height: 300px;
+  width: 200px;
+}
+
+.req {
+  color: red;
+}
+
+.radio {
+  width: auto;
+}
+
+.error-win {
+  background-color: darkolivegreen;
+  color: wheat;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.retrybtn {
+  width: 100px;
+  background-color: wheat;
+  color: darkolivegreen;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.poll-label {
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.poll-label input {
+  width: 20%;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.sched-day {
+  background-color: slategrey;
+  color: white;
+}
+
+.sched-title {
+  background-color: slateblue;
+  color: white;
+}
+
+.sess-title {
+  width: 325px;
+}
+
+.buttons {
+  background-color: red;
+  color: white;
+  font-size: 25px;
+  box-shadow: 0 5px 10px 0 rgb(144, 0, 0), 0 6px 20px 0 rgb(144, 0, 0);
+  border: red solid;
+  border-radius: 5px;
+  width: 125px;
+  margin: 15px;
+}
+
+/* IDs */
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#regis {
+  padding: 10px;
+  font-style: italic;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+#convention-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#convention-img img {
+  height: 400px;
+  width: 600px;
+}
+
+#convention-img p {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+#awards {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+#vote-titles {
+  text-align: center;
+  font-weight: bolder;
+}
+
+#act-list {
+  display: block;
+  list-style: none;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+#act-list li {
+  padding: 8px;
+}
+
+#act-video-sect {
+  display: flex;
+  justify-content: center;
+}
+
+#pricing {
+  text-align: center;
+}
+
+#pricing p {
+  margin: 0;
+  padding: 0;
+}
+
+#schedule td {
+  border: none;
+  border-bottom: #3f4249 solid;
+}
+
+#schedule .empty {
+  border: none;
+}
+
+#reg-form {
+  display: flex;
+  justify-content: center;
+}
+
+#thank-you {
+  display: flex;
+  justify-content: center;
+}
+
+#thank-you img {
+  height: auto;
+  width: 600px;
+}
+
+#poll {
+  display: flex;
+  justify-content: center;
+}
+
+#starter-poll {
+  min-width: 300px;
+  max-width: 500px;
+}
+
+/* Pseudo */
+nav a:hover {
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+}
+
+.act-item a:hover {
+  color: #3f4249;
+  text-shadow: none;
+}
+
+.buttons:hover {
+  background-color: white;
+  color: red;
+}
+
+.buttons:active {
+  box-shadow: 0.3rem 0.3rem 0.3rem rgb(144, 0, 0) inset;
+}
+
+#form-personal:hover {
+  background-color: slategray;
+  color: whitesmoke;
+  font-weight: 600;
+  box-shadow: 0 5px 10px 0 #3f4249, 0 6px 20px 0 #3f4249;
+}
+
+#form-company:hover {
+  background-color: red;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 5px 10px 0 rgb(144, 0, 0), 0 6px 20px rgb(144, 0, 0);
+}
+
+#form-workshop:hover {
+   background-color: antiquewhite;
+   color: darkgoldenrod;
+   font-weight: 600;
+   box-shadow: 0 5px 10px 0 #3f4249, 0 6px 20px 0 #3f4249;
+}
+
+/* Media */
+@media screen and (max-width: 1024px) {
+  nav {
+    font-size: 0.8rem;
+    justify-content: center;
+  }
+
+  blockquote {
+    width: fit-content;
+  }
+
+  .keynote {
+    padding: 5px;
+    width: 350px;
+  }
+
+  .sess-title {
+    max-width: 225px;
+  }
+
+  #schedule {
+    font-size: 12px;
+  }
+
+  #schedule td {
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+    font-weight: 550;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  table {
+    width: 100%;
+  }
+
+  table img {
+    width: 100%;
+    height: auto;
+  }
+
+  form {
+   width: 100%;
+   max-width: 435px;
+  }
+
+  fieldset {
+   width: 82%;
+   font-size: smaller;
+   border-radius: 15px;
+  }
+
+  .act-item {
+    font-size: 1rem;
+  }
+
+  .act-item a {
+    text-shadow: none;
+  }
+
+  .keynote {
+    width: 100%;
+  }
+
+  .flex-sect {
+    flex-direction: column;
+  }
+
+  .sess-title {
+    max-width: 135px;
+  }
+
+  .act-video-sect {
+    width: 100%;
+  }
+
+  #schedule {
+    font-size: 10px;
+  }
+
+  #convention-img img {
+    height: auto;
+    width: 100%;
+  }
+
+  #thank-you img {
+    width: 100%;
+  }
+}
