@@ -23,7 +23,6 @@ p {
    align-items: center;
    width: 76mm;
    height: 50mm;
-   border: gray dotted;
 }
 
 .tag-name {
@@ -66,7 +65,7 @@ p {
 }
 
 #tag-row-top {
-   margin: 1mm var(--sidemargin) 0 var(--sidemargin);
+   margin: var(--topbottommargin) var(--sidemargin) 0 var(--sidemargin);
 }
 
 #tag-row-bottom {
