@@ -1,0 +1,74 @@
+:root {
+   --sidemargin: 30mm;
+   --topbottommargin: 15mm;
+}
+
+html,
+main,
+body {
+   display: flex;
+   justify-content: center;
+   margin: 0;
+   padding: 0;
+}
+
+p {
+   margin: 2px;
+}
+
+.tag {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 76mm;
+   height: 50mm;
+   border: gray dotted;
+}
+
+.tag-name {
+   font-size: 22pt;
+   font-weight: 600;
+   color: green;
+}
+
+.tag-position {
+   color: red;
+}
+
+.tag-position,
+.company,
+.tag-location {
+   font-size: 12pt;
+   font-weight: 600;
+}
+
+.tag-row,
+#tag-row-top,
+#tag-row-bottom {
+   display: flex;
+   align-items: center;
+   width: 152mm;
+}
+
+.tag-row {
+   margin: 0 var(--sidemargin) 0 var(--sidemargin);
+}
+
+#tag-page {
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 212mm;
+   height: 280mm;
+}
+
+#tag-row-top {
+   margin: 1mm var(--sidemargin) 0 var(--sidemargin);
+}
+
+#tag-row-bottom {
+   margin: 0 var(--sidemargin) var(--topbottommargin) var(--sidemargin);
+}
