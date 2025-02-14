@@ -23,7 +23,6 @@ p {
    align-items: center;
    width: 76mm;
    height: 50mm;
-   border: gray dotted;
 }
 
 .tag-name {
