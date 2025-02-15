@@ -2,7 +2,9 @@ const type2 = $('#type2');
 const evol1 = $('#evol1');
 const evol2 = $('#evol2');
 const evol3 = $('#evol3');
+const legend1 = $('#legend1');
 const legend2 = $('#legend2');
+const legend3 = $('#legend3')
 const errorNode = $('.error-win')
 const regSubmit = $('#reg-button');
 const regForm = $('#registration-form');
@@ -17,6 +19,7 @@ const session2 = $('input[name="session-2"]');
 const session3 = $('input[name="session-3"]');
 const evolErrorMsg = "Cannot select any Pokémon Evolution sessions if Electric, Ground, Rock, Steel, Ice, Fighting Pokémon session is selected.";
 const legErrorMsg = "Cannot select Two Series Legendary Pokémon session unless Double Evolution session is also selected.";
+const doubleErrorMsg = "If you are attending Double Evolution, you can only attend Two Series Legendary Pokémon session on Day 2.";
 var errWinOpen = 'open';
 var errMsg = 'err';
 var confKey = ""
@@ -31,6 +34,10 @@ if (document.title === "Session Error") {
     var h3el = $('<h3>');
     if (localStorage.getItem(errMsg) === 'B') {
         h3el.text(evolErrorMsg);
+        errorNode.prepend(h3el);
+    }
+    else if (localStorage.getItem(errMsg) === 'F') {
+        h3el.text(doubleErrorMsg);
         errorNode.prepend(h3el);
     }
     else {
@@ -60,6 +67,12 @@ function workshopCheck() {
             errWindow("H");
         }
     }
+    if ((legend1.is(":checked") || legend3.is(":checked")) && evol3.is(":checked")) {
+        clearRadio(session3);
+        if (localStorage.getItem(errWinOpen) === 'false') {
+            errWindow("F");
+        }
+    }
 }
 
 
@@ -77,6 +90,9 @@ function errWindow(workshop) {
     localStorage.setItem(errWinOpen, 'true');
     if (workshop === "B") {
         localStorage.setItem(errMsg, 'B');
+    }
+    else if (workshop === "F") {
+        localStorage.setItem(errMsg, 'F')
     }
     else {
         localStorage.setItem(errMsg, 'H');
@@ -297,7 +313,13 @@ regForm.on('submit', function () {
 type2.on('click', function () {
     workshopCheck();
 });
+legend1.on('click', function () {
+    workshopCheck();
+})
 legend2.on('click', function () {
+    workshopCheck();
+});
+legend3.on('click', function () {
     workshopCheck();
 });
 evol1.on('click', function () {
