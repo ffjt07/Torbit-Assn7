@@ -1,6 +1,6 @@
 :root {
    --sidemargin: 30mm;
-   --topbottommargin: 15mm;
+   --topbottommargin: 14.5mm;
 }
 
 html,
@@ -56,13 +56,13 @@ p {
 }
 
 #tag-page {
-   margin: 0;
-   padding: 0;
+   /* margin: 0;
+   padding: 0; */
    display: flex;
    flex-direction: column;
    align-items: center;
    width: 212mm;
-   height: 280mm;
+   height: 279mm;
 }
 
 #tag-row-top {
@@ -71,4 +71,18 @@ p {
 
 #tag-row-bottom {
    margin: 0 var(--sidemargin) var(--topbottommargin) var(--sidemargin);
+}
+
+@media screen and (max-width: 640px) {
+   .tag-row,
+   #tag-row-top,
+   #tag-row-bottom {
+      flex-direction: column;
+      width: 100%;
+   }
+
+   #tag-page {
+      height: 529mm;
+      width: 100%;
+   }
 }

@@ -7,7 +7,6 @@ csv_path = os.path.join(script_dir, "registrant_data.csv")
 html_path = os.path.join(script_dir, "nametags10.html")
 new_html_path = os.path.join(script_dir, "../..", "nametags10gen.html")
 
-hardcodeHtml = open(html_path, "r")
 newHtmlFile = open(new_html_path, "w+")
 registrantList = []
 htmlListofRegistrants = []
@@ -26,9 +25,13 @@ try:
 except FileNotFoundError:
    print(f"Error: The file {os.path.basename(csv_path)} was not found")
 
+try:
+   with open(html_path, "r") as hardcodeHtml:
+      htmlLines = hardcodeHtml.readlines()
+      hardcodeHtml.close()
+except FileNotFoundError:
+   print(f"Error: The file {os.path.basename(html_path)} was not found")
 
-htmlLines = hardcodeHtml.readlines()
-hardcodeHtml.close()
 css = htmlLines[12][0:33] + "./assets/css/nametags10.css\">\n" 
 pageTop = htmlLines[17]
 topRow = htmlLines[18]
@@ -72,6 +75,7 @@ def create_html_name_tags():
       insert_registrant(i)
    for lines in range(89,91):
       newHtmlFile.write(htmlLines[lines])
+   newHtmlFile.close()
 
 def type_of_row_insert(count):
    if count == 1 or count % 5 == 1:
