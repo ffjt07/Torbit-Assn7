@@ -70,8 +70,8 @@ def create_html_name_tags():
          type_of_row_insert(row_count)
          row_count += 1
       insert_registrant(i)
-   for line in range(89,91):
-      newHtmlFile.write(htmlLines[line])
+   for lines in range(89,91):
+      newHtmlFile.write(htmlLines[lines])
 
 def type_of_row_insert(count):
    if count == 1 or count % 5 == 1:
