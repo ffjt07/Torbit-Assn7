@@ -56,16 +56,6 @@ class HtmlRegistrant:
       self.city = _city
       self.state = _state
 
-for registrant in registrantList:
-   firstname = registrant['firstname']
-   lastname = registrant['lastname']
-   position = registrant['position']
-   company = registrant['company']
-   city = registrant['city']
-   state = registrant['state']
-   newHtmlregistrant = HtmlRegistrant(firstname, lastname, position, company, city, state)
-   htmlListofRegistrants.append(newHtmlregistrant)
-
 def create_html_name_tags():
    row_count = 1
    for i, person in enumerate(htmlListofRegistrants):
@@ -114,6 +104,16 @@ def insert_registrant(index):
       newHtmlFile.write(rowEnd)
    if index % 10 == 9 and index > 0:
       newHtmlFile.write(pageEnd)
+
+for registrant in registrantList:
+   firstname = registrant['firstname']
+   lastname = registrant['lastname']
+   position = registrant['position']
+   company = registrant['company']
+   city = registrant['city']
+   state = registrant['state']
+   newHtmlregistrant = HtmlRegistrant(firstname, lastname, position, company, city, state)
+   htmlListofRegistrants.append(newHtmlregistrant)
 
 for line in range(0,12):
    newHtmlFile.write(htmlLines[line])
