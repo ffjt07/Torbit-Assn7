@@ -32,17 +32,16 @@ tagEnd = htmlLines[24]
 pageEnd = htmlLines[88]
 
 class HtmlRegistrant:
-   def __init__(self, firstname, lastname, position, company, city, state):
-      self.firstname = firstname
-      self.lastname = lastname
-      self.position = position
-      self.company = company
-      self.city = city
-      self.state = state
+   def __init__(self, first_name, last_name, _position, _company, _city, _state):
+      self.firstname = first_name
+      self.lastname = last_name
+      self.position = _position
+      self.company = _company
+      self.city = _city
+      self.state = _state
 
 next(dataFile)
 for line in dataFile:
-   i = -1
    line = line.strip()
    valueList = line.split(sep=',')
    registrant = {}
@@ -62,48 +61,45 @@ for registrant in registrantList:
    newHtmlregistrant = HtmlRegistrant(firstname, lastname, position, company, city, state)
    htmlListofRegistrants.append(newHtmlregistrant)
 
- 
-def createHtmlNameTags():
-   rowCount = 1
-   for i, registrant in enumerate(htmlListofRegistrants):
+def create_html_name_tags():
+   row_count = 1
+   for i, person in enumerate(htmlListofRegistrants):
       if i % 2 == 0:
-         typeOfRowInsert(rowCount)
-         rowCount += 1
-      insertRegistrant(i)
+         type_of_row_insert(row_count)
+         row_count += 1
+      insert_registrant(i)
 
-def typeOfRowInsert(count):
+def type_of_row_insert(count):
    if count == 1 or count % 5 == 1:
-         insertPageTop()
-         insertFirstRow()
+         insert_page_top()
+         insert_first_row()
    elif count % 5 != 0:
-      insertRow()
+      insert_row()
    else:
-      insertLastRow()
+      insert_last_row()
    
-
-
-def insertPageTop():
+def insert_page_top():
    newHtmlFile.write(pageTop)
 
-def insertFirstRow():
+def insert_first_row():
    newHtmlFile.write(topRow)
 
-def insertRow():
+def insert_row():
    newHtmlFile.write(row)
 
-def insertLastRow():
+def insert_last_row():
    newHtmlFile.write(bottomRow)
 
 
-def insertRegistrant(index):
+def insert_registrant(index):
    name = htmlListofRegistrants[index].firstname + " " + htmlListofRegistrants[index].lastname + pEnd + "\n"
-   position = htmlListofRegistrants[index].position + pEnd + "\n"
-   company = htmlListofRegistrants[index].company + pEnd + "\n"
+   insert_position = htmlListofRegistrants[index].position + pEnd + "\n"
+   insert_company = htmlListofRegistrants[index].company + pEnd + "\n"
    location = htmlListofRegistrants[index].city + ", " + htmlListofRegistrants[index].state + pEnd + "\n"
    newHtmlFile.write(tag)
    newHtmlFile.write(tagName + name)
-   newHtmlFile.write(tagPosition + position)
-   newHtmlFile.write(tagCompany + company)
+   newHtmlFile.write(tagPosition + insert_position)
+   newHtmlFile.write(tagCompany + insert_company)
    newHtmlFile.write(tagLocation + location)
    newHtmlFile.write(tagEnd)
    if index % 2 != 0:
@@ -111,11 +107,10 @@ def insertRegistrant(index):
    if index % 10 == 9 and index > 0:
       newHtmlFile.write(pageEnd)
 
-
 for line in range(0,12):
    newHtmlFile.write(htmlLines[line])
 newHtmlFile.write(css)
 for line in range(13,17):
    newHtmlFile.write(htmlLines[line])
 
-createHtmlNameTags()
+create_html_name_tags()
