@@ -320,6 +320,17 @@ select {
   max-width: 500px;
 }
 
+#admin-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#admin-page a {
+  font-size: 20px;
+  color: red;
+}
+
 /* Pseudo */
 nav a:hover {
   border-radius: 10px;
@@ -360,6 +371,12 @@ nav a:hover {
    color: darkgoldenrod;
    font-weight: 600;
    box-shadow: 0 5px 10px 0 #3f4249, 0 6px 20px 0 #3f4249;
+}
+
+#admin-page a:hover {
+  background-color: red;
+  color: white;
+  text-decoration: none;
 }
 
 /* Media */
