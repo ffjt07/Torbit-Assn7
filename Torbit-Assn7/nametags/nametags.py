@@ -5,7 +5,7 @@ script_dir = os.path.dirname(__file__)
 # Construct the full path to the CSV file
 csv_path = os.path.join(script_dir, "registrant_data.csv")
 html_path = os.path.join(script_dir, "nametags10.html")
-new_html_path = os.path.join(script_dir, "..", "nametags10gen.html")
+new_html_path = os.path.join(script_dir, "../..", "nametags10gen.html")
 
 hardcodeHtml = open(html_path, "r")
 newHtmlFile = open(new_html_path, "w+")
