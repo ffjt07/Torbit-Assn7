@@ -1,3 +1,4 @@
+// Variables and Constants
 const type2 = $('#type2');
 const evol1 = $('#evol1');
 const evol2 = $('#evol2');
@@ -26,10 +27,12 @@ var confKey = ""
 var formData = "";
 var cookieData = {};
 
+// Set local storage when registration form page is opened
 if (document.title === "Registration Form") {
     localStorage.setItem(errWinOpen, 'false');
 }
 
+// Display and prepend error message and element on error window load
 if (document.title === "Session Error") {
     var h3el = $('<h3>');
     if (localStorage.getItem(errMsg) === 'B') {
@@ -46,6 +49,7 @@ if (document.title === "Session Error") {
     }
 }
 
+// Check workshop pairing to ensure user is selecting appropriate sessions
 function workshopCheck() {
     if (type2.is(":checked")) {
         if (sessionTwoCheck() === true) {
@@ -75,7 +79,7 @@ function workshopCheck() {
     }
 }
 
-
+// Create window and pass error message key/value into local storage
 function errWindow(workshop) {
     const winHeight = 400;
     const winWidth = 500;
@@ -100,6 +104,7 @@ function errWindow(workshop) {
     errorWindow.open(regerrorUrl, "Error Window", windowParams);
 }
 
+// Check to see if any session 2 sessions are checked
 function sessionTwoCheck() {
     isChecked = false;
     session2.each(function () {
@@ -111,22 +116,26 @@ function sessionTwoCheck() {
     return isChecked;
 }
 
+// Clear session radio buttons with session name passed in
 function clearRadio(radioObject) {
     $(radioObject).prop("checked", false);
 }
 
+// Removes required attribute on form if type2 is checked for form to be submitted
 function evolCheck() {
     if (type2.is(":checked")) {
         evol1.removeAttr("required");
     }
 }
 
+// Closes current window and resets local storage value to show error window is no longer open
 function closeWin() {
     let currWin = open(location, '_self');
     localStorage.setItem(errWinOpen, 'false');
     currWin.close();
 }
 
+// Parses form data and stores it as a cookie key:value pair with the conference id as the key
 function storeCookie() {
     var name;
     var value;
@@ -194,6 +203,7 @@ function storeCookie() {
     Cookies.set(confKey, formData);
 }
 
+// If conference ID exists, loads cookie data from ID and fills in the data on form
 function loadCookie(cookieKey) {
     var cookieValue = Cookies.get(cookieKey);
     var tempArray;
@@ -256,6 +266,7 @@ function loadCookie(cookieKey) {
     }
 }
 
+// Displays an alert to thank user for voting and stores vote count in local storage
 function thankYouAlert() {
     var countId;
     var currentCount;
@@ -285,6 +296,7 @@ function thankYouAlert() {
     });
 }
 
+// Pulls vote count data from local storage and displays it on the screen
 function renderPollCount() {
     var localKey;
     var currentCount;
@@ -302,14 +314,17 @@ function renderPollCount() {
     });
 }
 
+// Focus event to call load cookie function
 confId.blur(function () {
     loadCookie(confId.val());
 });
 
+// On form submission calls store cookie function
 regForm.on('submit', function () {
     storeCookie();
 });
 
+// On click functions to call appropriate form checks for sessions selected
 type2.on('click', function () {
     workshopCheck();
 });
@@ -335,6 +350,7 @@ regSubmit.on('click', function () {
     evolCheck();
 });
 
+// Removes data from local storage if navigating to different page than Registration form or Error window
 if (document.title !== "Registration Form") {
     if (document.title !== "Session Error") {
         localStorage.removeItem(errWinOpen);
@@ -342,6 +358,7 @@ if (document.title !== "Registration Form") {
     } 
 }
 
+// On load of Poll page, run render poll count function
 if (document.title === "Poll") {
     renderPollCount();
 }
