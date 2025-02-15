@@ -7,12 +7,25 @@ csv_path = os.path.join(script_dir, "registrant_data.csv")
 html_path = os.path.join(script_dir, "nametags10.html")
 new_html_path = os.path.join(script_dir, "..", "nametags10reg.html")
 
-dataFile = open(csv_path, "r")
 hardcodeHtml = open(html_path, "r")
 newHtmlFile = open(new_html_path, "w+")
-keyList = dataFile.readline().strip().split(sep=',')
 registrantList = []
 htmlListofRegistrants = []
+try:
+   with open(csv_path, "r") as dataFile:
+      keyList = dataFile.readline().strip().split(sep=',')
+      next(dataFile)
+      for line in dataFile:
+         line = line.strip()
+         valueList = line.split(sep=',')
+         registrant = {}
+         for key, value in zip(keyList, valueList):
+            registrant.update({key:value})
+         registrantList.append(registrant)
+      dataFile.close()
+except FileNotFoundError:
+   print(f"Error: The file {os.path.basename(csv_path)} was not found")
+
 
 htmlLines = hardcodeHtml.readlines()
 hardcodeHtml.close()
@@ -40,17 +53,6 @@ class HtmlRegistrant:
       self.city = _city
       self.state = _state
 
-next(dataFile)
-for line in dataFile:
-   line = line.strip()
-   valueList = line.split(sep=',')
-   registrant = {}
-   for key, value in zip(keyList, valueList):
-      registrant.update({key:value})
-   registrantList.append(registrant)
-
-dataFile.close()
-
 for registrant in registrantList:
    firstname = registrant['firstname']
    lastname = registrant['lastname']
@@ -68,6 +70,8 @@ def create_html_name_tags():
          type_of_row_insert(row_count)
          row_count += 1
       insert_registrant(i)
+   for line in range(89,91):
+      newHtmlFile.write(htmlLines[line])
 
 def type_of_row_insert(count):
    if count == 1 or count % 5 == 1:
